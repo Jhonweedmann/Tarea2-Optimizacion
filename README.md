@@ -6,7 +6,8 @@ para el ruteo consistente multi-día (cada cliente atendido siempre por la misma
 ## Estructura
 
 ```
-docs/modelo.md            Formulación algebraica completa (conjuntos, parámetros, variables, restricciones, Big-M)
+docs/modelo.md            Formulación algebraica completa, Big-M y diferencias con el paper
+docs/pitch_modelo.md      Láminas y guion de la parte "modelo matemático" del pitch (≈1:15)
 src/instancia.py          Lectura de instancias JSON → objeto Instancia
 src/modelo.py             build_model(inst): construye el PLEM en gurobipy
 src/validar.py            Extrae rutas y verifica la solución de forma independiente
@@ -23,7 +24,7 @@ pip install -r requirements.txt
 ```
 
 La licencia que trae `pip` está limitada a 2000 variables y 2000 restricciones.
-La instancia de ejemplo (15 clientes) ya ocupa ~1750 variables, así que para
+La instancia de ejemplo (15 clientes) ya ocupa ~1740 variables, así que para
 instancias más grandes se necesita la **licencia académica gratuita** de Gurobi
 (gurobi.com → Academia → Named-User Academic License, luego `grbgetkey <clave>`).
 
@@ -49,7 +50,7 @@ mod = build_model(inst, verbose=False)
 
 mod.m          # gurobipy.Model
 mod.X, mod.Z   # variables binarias X[r,i,j,t], Z[r,i]
-mod.A, mod.S, mod.F
+mod.A, mod.S, mod.F   # A[i,t] inicio de servicio, S[r] salida, F[r,t] retorno
 mod.cap        # restricciones de capacidad cap[r,t]  → sensibilidad de Q
 ```
 
@@ -65,8 +66,8 @@ mod.cap        # restricciones de capacidad cap[r,t]  → sensibilidad de Q
 
 | Métrica | Valor |
 |---|---|
-| Tamaño | 1746 variables (1689 binarias), 1023 restricciones |
-| Óptimo (default, 1 hilo) | 1368.78, en ~66 s y ~32 000 nodos |
+| Tamaño | 1740 variables (1689 binarias), 1017 restricciones |
+| Óptimo (default, 1 hilo) | 1368.78, en ~40–65 s y ~30 000 nodos |
 | Relajación lineal | 882.24 → brecha de integralidad ≈ 35.5 % |
 
 La instancia de ejemplo es sintética y solo sirve para probar el código. Las instancias

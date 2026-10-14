@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 from gurobipy import GRB
@@ -64,6 +65,8 @@ def resolver(ruta_instancia: str, time_limit: float = 600, threads: int = 1,
 
 
 if __name__ == "__main__":
+    # En Windows la consola por defecto (cp1252) no imprime "→" y el script se cae
+    sys.stdout.reconfigure(encoding="utf-8")
     p = argparse.ArgumentParser()
     p.add_argument("instancia")
     p.add_argument("--time-limit", type=float, default=600)

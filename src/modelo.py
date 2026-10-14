@@ -29,7 +29,7 @@ class ModeloConVRP:
     X: gp.tupledict        # X[r,i,j,t] arco (i,j) recorrido por la ruta r el día t
     Z: gp.tupledict        # Z[r,i]     cliente i asignado a la ruta r (todos los días)
     A: gp.tupledict        # A[i,t]     inicio de servicio en i el día t
-    S: gp.tupledict        # S[r,t]     salida de la ruta r del depósito el día t
+    S: gp.tupledict        # S[r]       salida planificada de la ruta r (igual todos los días, dW^r)
     F: gp.tupledict        # F[r,t]     retorno de la ruta r al depósito el día t
     cap: gp.tupledict      # restricciones (14), para el análisis de sensibilidad de Q
     big_m: dict            # valores de M usados, por si se quieren reportar
@@ -95,7 +95,7 @@ def build_model(inst: Instancia, nombre: str | None = None, verbose: bool = True
     X = m.addVars(idx_x, vtype=GRB.BINARY, name="X")
     Z = m.addVars(R, C, vtype=GRB.BINARY, name="Z")
     A = m.addVars([(i, t) for t in T for i in inst.N(t)], lb=E, ub=L, name="A")
-    S = m.addVars(R, T, lb=E, ub=L, name="S")
+    S = m.addVars(R, lb=E, ub=L, name="S")
     F = m.addVars(R, T, lb=E, ub=L, name="F")
 
     # ---- (1) función objetivo: distancia total ------------------------------
@@ -140,7 +140,7 @@ def build_model(inst: Instancia, nombre: str | None = None, verbose: bool = True
 
         # ---- (9) primera llegada respecto de la salida del depósito ---------
         m.addConstrs(
-            (A[j, t] >= S[r, t] + inst.tiempo(0, j) - M[0, j] * (1 - X[r, 0, j, t])
+            (A[j, t] >= S[r] + inst.tiempo(0, j) - M[0, j] * (1 - X[r, 0, j, t])
              for r in R for j in Nt), name=f"salida[{t}]")
 
         # ---- (10) retorno al depósito tras el último cliente ----------------
@@ -149,7 +149,7 @@ def build_model(inst: Instancia, nombre: str | None = None, verbose: bool = True
              for r in R for i in Nt), name=f"retorno[{t}]")
 
     # ---- (11)-(12) horario de operación del depósito ------------------------
-    m.addConstrs((S[r, t] >= E for r in R for t in T), name="dep_abre")
+    m.addConstrs((S[r] >= E for r in R), name="dep_abre")
     m.addConstrs((F[r, t] <= L for r in R for t in T), name="dep_cierra")
 
     # ---- (14) capacidad del vehículo, por ruta y día ------------------------

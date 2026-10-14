@@ -29,7 +29,7 @@ def extraer_solucion(mod: ModeloConVRP) -> dict:
             rutas[r, t] = {
                 "camino": camino,
                 "arcos": sucesor,
-                "salida": mod.S[r, t].X,
+                "salida": mod.S[r].X,
                 "retorno": mod.F[r, t].X,
                 "llegadas": {i: mod.A[i, t].X for i in camino[1:-1]},
             }
