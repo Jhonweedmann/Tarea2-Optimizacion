@@ -1,0 +1,334 @@
+{
+  "nombre": "inst_A_capacidad",
+  "descripcion": "Capacidad ajustada. 20 clientes de Solomon R201 (clientes dispersos, ventanas originales de ~100-170 ampliadas x2.5 en el 40 %), cada cliente pide exactamente 2 de los 3 días con demanda variable (x0.5-1.5). Q fijada para ~92 % de utilización de la flota en el día más cargado: la consistencia cliente-ruta obliga a empaquetar bien la carga de los tres días.",
+  "origen": "Solomon R201 (CVRPLIB), clientes [2, 6, 8, 9, 11, 12, 14, 15, 16, 18, 19, 20, 22, 23, 24, 29, 30, 33, 38, 40]",
+  "n_rutas": 3,
+  "n_dias": 3,
+  "capacidad": 64,
+  "deposito": {
+    "x": 35,
+    "y": 35,
+    "apertura": 0,
+    "cierre": 1000
+  },
+  "clientes": [
+    {
+      "id": 1,
+      "id_solomon": 2,
+      "x": 35,
+      "y": 17,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        6,
+        4,
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "id_solomon": 6,
+      "x": 25,
+      "y": 30,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "id_solomon": 8,
+      "x": 10,
+      "y": 43,
+      "servicio": 10,
+      "ventana": [
+        346,
+        539
+      ],
+      "demanda": [
+        0,
+        8,
+        8
+      ]
+    },
+    {
+      "id": 4,
+      "id_solomon": 9,
+      "x": 55,
+      "y": 60,
+      "servicio": 10,
+      "ventana": [
+        327,
+        570
+      ],
+      "demanda": [
+        0,
+        10,
+        10
+      ]
+    },
+    {
+      "id": 5,
+      "id_solomon": 11,
+      "x": 20,
+      "y": 65,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        9,
+        0,
+        15
+      ]
+    },
+    {
+      "id": 6,
+      "id_solomon": 12,
+      "x": 50,
+      "y": 35,
+      "servicio": 10,
+      "ventana": [
+        140,
+        433
+      ],
+      "demanda": [
+        0,
+        12,
+        13
+      ]
+    },
+    {
+      "id": 7,
+      "id_solomon": 14,
+      "x": 15,
+      "y": 10,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        0,
+        19,
+        14
+      ]
+    },
+    {
+      "id": 8,
+      "id_solomon": 15,
+      "x": 30,
+      "y": 5,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        6,
+        0,
+        10
+      ]
+    },
+    {
+      "id": 9,
+      "id_solomon": 16,
+      "x": 10,
+      "y": 20,
+      "servicio": 10,
+      "ventana": [
+        196,
+        449
+      ],
+      "demanda": [
+        0,
+        14,
+        20
+      ]
+    },
+    {
+      "id": 10,
+      "id_solomon": 18,
+      "x": 20,
+      "y": 40,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        7,
+        0,
+        12
+      ]
+    },
+    {
+      "id": 11,
+      "id_solomon": 19,
+      "x": 15,
+      "y": 60,
+      "servicio": 10,
+      "ventana": [
+        187,
+        460
+      ],
+      "demanda": [
+        20,
+        16,
+        0
+      ]
+    },
+    {
+      "id": 12,
+      "id_solomon": 20,
+      "x": 45,
+      "y": 65,
+      "servicio": 10,
+      "ventana": [
+        517,
+        730
+      ],
+      "demanda": [
+        6,
+        0,
+        5
+      ]
+    },
+    {
+      "id": 13,
+      "id_solomon": 22,
+      "x": 45,
+      "y": 10,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        14,
+        16,
+        0
+      ]
+    },
+    {
+      "id": 14,
+      "id_solomon": 23,
+      "x": 55,
+      "y": 5,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        17,
+        0,
+        27
+      ]
+    },
+    {
+      "id": 15,
+      "id_solomon": 24,
+      "x": 65,
+      "y": 35,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        3,
+        2,
+        0
+      ]
+    },
+    {
+      "id": 16,
+      "id_solomon": 29,
+      "x": 64,
+      "y": 42,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        10,
+        0,
+        13
+      ]
+    },
+    {
+      "id": 17,
+      "id_solomon": 30,
+      "x": 40,
+      "y": 60,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        25,
+        20,
+        0
+      ]
+    },
+    {
+      "id": 18,
+      "id_solomon": 33,
+      "x": 53,
+      "y": 52,
+      "servicio": 10,
+      "ventana": [
+        0,
+        317
+      ],
+      "demanda": [
+        0,
+        15,
+        16
+      ]
+    },
+    {
+      "id": 19,
+      "id_solomon": 38,
+      "x": 5,
+      "y": 5,
+      "servicio": 10,
+      "ventana": null,
+      "demanda": [
+        23,
+        23,
+        0
+      ]
+    },
+    {
+      "id": 20,
+      "id_solomon": 40,
+      "x": 40,
+      "y": 25,
+      "servicio": 10,
+      "ventana": [
+        302,
+        495
+      ],
+      "demanda": [
+        11,
+        13,
+        0
+      ]
+    }
+  ],
+  "construccion": {
+    "familia": "R201",
+    "clientes_solomon": [
+      2,
+      6,
+      8,
+      9,
+      11,
+      12,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      23,
+      24,
+      29,
+      30,
+      33,
+      38,
+      40
+    ],
+    "semilla": 32,
+    "utilizacion_objetivo": 0.92,
+    "fraccion_con_ventana": 0.4,
+    "factor_ampliacion_ventana": 2.5,
+    "variacion_demanda": [
+      0.5,
+      1.5
+    ],
+    "regla": "demanda_dia = max(1, round(demanda_solomon x U(0.5,1.5))); ventana nueva = centro original +- (semiancho original x factor), recortada a [apertura, cierre]; Q = ceil(carga del dia mas cargado / (3 x utilizacion))"
+  }
+}

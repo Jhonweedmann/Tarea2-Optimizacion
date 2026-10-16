@@ -1,1 +1,2 @@
 gurobipy>=11
+matplotlib
