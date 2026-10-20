@@ -37,7 +37,6 @@ def mod_nv(inst, limite, parametros=None, archivo=None):
 
 def resolver(inst, nombre, limite, parametros=None, archivo=None):
     '''Resuelve la instancia con los parámetros dados'''
-    print(f"{inst.nombre}: {nombre} (hasta {limite} s)", flush=True)
     with mod_nv(inst, limite, parametros, archivo) as m:
         m.optimize()
         '''Devuelve un diccionario con los resultados de cada corrida'''
@@ -51,7 +50,6 @@ def resolver(inst, nombre, limite, parametros=None, archivo=None):
 
 def ajustar(inst, limite, presupuesto, carpeta):
     """Busca parámetros y los guarda para evaluarlos en otro modelo limpio."""
-    print(f"{inst.nombre}: tuning (hasta {presupuesto} s)", flush=True)
     with mod_nv(inst, limite) as m:
         m.Params.OutputFlag = 1
         m.Params.LogToConsole = 0
@@ -109,11 +107,12 @@ def main():
     a = p.parse_args()
     a.instancias = [str(Path(r).resolve()) for r in a.instancias]
     os.chdir(RAIZ) 
+
     limite, presupuesto = (2, 5) if a.prueba else (600, a.tune_time_limit)
     carpeta = RAIZ / "resultados" / ("prueba_" if a.prueba else "experimentos_")
     carpeta = carpeta.with_name(carpeta.name + datetime.now().strftime("%Y%m%d_%H%M%S_%f"))
     carpeta.mkdir(parents=True)
-    print(f"Salida: {carpeta}", flush=True)
+
     (carpeta / "ejecucion.txt").write_text(
         f"Gurobi {gp.gurobi.version()}; Threads=1; TimeLimit={limite}; TuneTimeLimit={presupuesto}\n"
         + "\n".join(str(Path(r).resolve()) for r in a.instancias), encoding="utf-8")
@@ -136,7 +135,6 @@ def main():
                 salida.flush() 
                 filas.append(fila)
                 grafico(filas, carpeta, limite)
-    print(f"Listo: {carpeta}", flush=True)
 
 if __name__ == "__main__":
     main()
