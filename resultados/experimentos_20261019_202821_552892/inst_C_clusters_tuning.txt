@@ -1,0 +1,2 @@
+Búsqueda: 1800.79 s. Conjuntos: 1.
+Se evaluará el conjunto 0 desde cero.
