@@ -1,0 +1,122 @@
+{
+  "instancia": "inst_C_clusters",
+  "Q": 94.0,
+  "objetivo": 765.7100000000002,
+  "cota": 699.5500000000001,
+  "gap_%": 8.640346867613074,
+  "estado": "TIME_LIMIT",
+  "Q_minimo_sin_cambiar_solucion": 94.0,
+  "Pi_max_abs": 0.0,
+  "relajacion": null,
+  "escenarios_Q": null,
+  "filas": [
+    {
+      "ruta": 0,
+      "dia": 0,
+      "clientes": 5,
+      "carga": 56.0,
+      "RHS_Q": 94.0,
+      "holgura": 38.0,
+      "utilizacion_%": 59.57446808510638,
+      "Pi": 0.0,
+      "SARHSLow": 56.0,
+      "SARHSUp": null
+    },
+    {
+      "ruta": 0,
+      "dia": 1,
+      "clientes": 5,
+      "carga": 84.0,
+      "RHS_Q": 94.0,
+      "holgura": 10.0,
+      "utilizacion_%": 89.36170212765957,
+      "Pi": 0.0,
+      "SARHSLow": 84.0,
+      "SARHSUp": null
+    },
+    {
+      "ruta": 0,
+      "dia": 2,
+      "clientes": 5,
+      "carga": 61.0,
+      "RHS_Q": 94.0,
+      "holgura": 33.0,
+      "utilizacion_%": 64.8936170212766,
+      "Pi": 0.0,
+      "SARHSLow": 61.0,
+      "SARHSUp": null
+    },
+    {
+      "ruta": 1,
+      "dia": 0,
+      "clientes": 3,
+      "carga": 94.0,
+      "RHS_Q": 94.0,
+      "holgura": 0.0,
+      "utilizacion_%": 100.0,
+      "Pi": 0.0,
+      "SARHSLow": 94.0,
+      "SARHSUp": null
+    },
+    {
+      "ruta": 1,
+      "dia": 1,
+      "clientes": 3,
+      "carga": 82.0,
+      "RHS_Q": 94.0,
+      "holgura": 12.0,
+      "utilizacion_%": 87.23404255319149,
+      "Pi": 0.0,
+      "SARHSLow": 82.0,
+      "SARHSUp": null
+    },
+    {
+      "ruta": 1,
+      "dia": 2,
+      "clientes": 3,
+      "carga": 92.0,
+      "RHS_Q": 94.0,
+      "holgura": 2.0,
+      "utilizacion_%": 97.87234042553192,
+      "Pi": 0.0,
+      "SARHSLow": 92.0,
+      "SARHSUp": null
+    },
+    {
+      "ruta": 2,
+      "dia": 0,
+      "clientes": 5,
+      "carga": 93.0,
+      "RHS_Q": 94.0,
+      "holgura": 1.0,
+      "utilizacion_%": 98.93617021276596,
+      "Pi": 0.0,
+      "SARHSLow": 93.0,
+      "SARHSUp": null
+    },
+    {
+      "ruta": 2,
+      "dia": 1,
+      "clientes": 5,
+      "carga": 93.0,
+      "RHS_Q": 94.0,
+      "holgura": 1.0,
+      "utilizacion_%": 98.93617021276596,
+      "Pi": 0.0,
+      "SARHSLow": 93.0,
+      "SARHSUp": null
+    },
+    {
+      "ruta": 2,
+      "dia": 2,
+      "clientes": 5,
+      "carga": 84.0,
+      "RHS_Q": 94.0,
+      "holgura": 10.0,
+      "utilizacion_%": 89.36170212765957,
+      "Pi": 0.0,
+      "SARHSLow": 84.0,
+      "SARHSUp": null
+    }
+  ]
+}

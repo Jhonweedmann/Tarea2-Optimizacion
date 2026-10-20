@@ -1,0 +1,16 @@
+{
+  "instancia": "inst_C_clusters",
+  "z_LP": 225.2935813944003,
+  "z_MILP": 765.7100000000002,
+  "brecha_integralidad_%": 70.57716610800429,
+  "cota_MIP": 697.82,
+  "gap_solver_%": 8.866280967990505,
+  "estado_MIP": "TIME_LIMIT",
+  "tiempo_LP_s": 0.016000032424926758,
+  "M_promedio": 930.9222426470589,
+  "M_max": 1236.0,
+  "iteraciones": 483,
+  "x_fraccionales_%": 9.82905982905983,
+  "n_vars": 1737,
+  "n_restr": 1008
+}

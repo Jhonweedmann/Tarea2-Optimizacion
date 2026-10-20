@@ -1,0 +1,16 @@
+{
+  "instancia": "inst_A_capacidad",
+  "z_LP": 578.5223648998433,
+  "z_MILP": 964.56,
+  "brecha_integralidad_%": 40.022148451123485,
+  "cota_MIP": 964.47,
+  "gap_solver_%": 0.009330679273442622,
+  "estado_MIP": "OPTIMAL",
+  "tiempo_LP_s": 0.029000043869018555,
+  "M_promedio": 721.0571666666667,
+  "M_max": 1000.0000000000001,
+  "iteraciones": 485,
+  "x_fraccionales_%": 10.743321718931476,
+  "n_vars": 1834,
+  "n_restr": 1056
+}
